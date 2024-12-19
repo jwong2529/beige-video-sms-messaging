@@ -1,7 +1,7 @@
 # SMS Messaging Application
 This application integrates Twilio SMS messaging with HubSpot CRM to send and receive SMS messages while logging details into HubSpot properties. It supports role-based messaging (Client, Content Producer, Project Manager), SMS logging, and masked phone number communication.
 
-*Note: This application was developed using test numbers, including my own phone number, for demonstration purposes. It has not been tested with real production numbers. Some modifications may be needed for real-world use.*
+*Note: This application was developed using test numbers, including my own phone number, for demonstration purposes.*
 
 ## Features
 * Send SMS: Send SMS messages with Twilio, with role-based sender identification.
@@ -27,7 +27,7 @@ TEST_MODE=true # Set to 'false' in production
 CLIENT_PHONE=<hardcoded_client_phone_number> # For testing purposes
 ```
 ### Steps
-1. Clone the repository:
+1. Clone the repository.
 2. Install dependencies:
     ```npm install```
 3. Start the server:
@@ -61,7 +61,7 @@ CLIENT_PHONE=<hardcoded_client_phone_number> # For testing purposes
 ```
 {
   "From": "<sender_phone_number>",
-  "Body": "Hello content producer or project manager!",
+  "Body": "Hello project manager!",
   "recipientRole": "project_manager",
   "contactId": "<hubspot_contact_record_id>",
   "dealId": "<hubspot_deal_record_id>"
@@ -93,5 +93,5 @@ CLIENT_PHONE=<hardcoded_client_phone_number> # For testing purposes
 }
 ```
 ## Notes
-* HubSpot SMS logging: SMS details are appended to the sms_log property for deals. This is a custom property that must be configured in your HubSpot account.
+* HubSpot SMS logging: SMS details are appended to the sms_log property for Deals. This is a custom property that must be configured in your HubSpot account.
 * Testing Mode: When TEST_MODE is set to 'true', the application uses Twilio's test credentials and test numbers. Actual SMS messages cannot be sent in this mode.
